@@ -1,0 +1,28 @@
+{%load static%}
+{%block content %}
+
+<header id = 'nav-header'>
+    <div class = 'nav-container'>
+        <div id = 'left'>
+            <img src="{% static 'images/horse.png' %}" id='logo'>
+
+            <h2>Jays'</h2>
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'todoForm' %}">Todo</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">contact</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'todoDatabase' %}">Database</a></li>
+        </ul>
+        <a href="{% url 'logoutPage' %}"><button>Logout</button></a>
+        {% else %}
+        </ul>
+        <a href="{% url 'loginPage' %}"><button>Login</button></a>
+        {% endif %}
+    </div>
+</header>
+
+{% endblock %}

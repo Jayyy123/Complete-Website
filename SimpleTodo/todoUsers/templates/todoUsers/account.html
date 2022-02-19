@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{%load static%}
+{%block content %}
+<div class = "profile-container">
+    <div id="sidebar">
+        <ul>
+        <div id='picture'>
+            <li><img src = "{{a.profile_picture.url}}" id='pp'></li>
+        </div>
+        <div id = 'name'>
+            <li>{{a.first_name}}</li>
+            <li>{{a.last_name}}</li>
+            
+        </div>
+        </ul>
+    </div>
+    <div id='mainbar'>
+        <div id='headliner'>
+            <div id='username'>
+                <h2>Welcome {{a.username}}!</h2>
+            </div>
+            <div id='short_intro'>
+                {{a.short_intro}}
+            </div>
+            <div id='bio'>
+                {{a.bio}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

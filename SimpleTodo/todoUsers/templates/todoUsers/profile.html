@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{%load static%}
+{%block content %}
+
+<div class = 'container'>
+    <div id= "table">
+        <div id= "table-head">
+        <tr>
+        <div id="userr1">
+            <th>Username</th>
+        </div>
+        <div id="userr2">
+            <th>Lastname</th>
+        </div>
+        <div id="user3">
+            <th></th>
+        </div>
+        <div id="user4">
+            <th></th>
+        </div>
+        <div id="user5">
+            <th></th>
+        </div>
+        </tr>
+
+        </div>
+        {% for i in a%}
+        <div id= "table-body">
+        <tr>
+            <div id="user1">
+            <td>{{i.username}}</td>
+            </div>
+            <div id="user2">
+            <td>{{i.last_name}}</td>
+            </div>
+            <div id='user3'>
+            <td><a href = "/users/account/{{i.id}}">View</a></td>
+            </div>
+            <div id='user4'>
+            <td><a href = "">Edit</a></td>
+            </div>
+            <div id='user5'>
+            <td><a href = "">Delete</a></td>
+            </div>
+        </tr>
+
+        </div>
+                {% endfor %}
+    </div>
+<div>
+
+{% endblock %}

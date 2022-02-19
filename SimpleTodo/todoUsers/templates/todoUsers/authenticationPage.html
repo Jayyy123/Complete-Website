@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{%load static%}
+{%block content %}
+
+<div class = 'container'>
+    <div class = 'o'>
+        <h3>Welcome</h3>
+        <p>Click on Login to enter your details or Signup now!</p>
+
+        <div>
+           <a href = "{% url 'signupPage' %}"> <button>SignUp</button></a>
+            <a href = "{% url 'loginPage' %}"><button>Login</button></a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

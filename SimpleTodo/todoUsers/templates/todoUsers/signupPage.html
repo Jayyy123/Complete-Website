@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{%load static%}
+{%block content %}
+
+<div class = "container">
+    <div id = 'signup'>
+        <div id='signup-head'>
+            <h2>SignUp</h2>
+        </div>
+        <form method = 'post'>
+        {% csrf_token %}
+            <div id ='model-form'>
+
+                <div id="firsts">
+                    <div id='one'>
+                        Firstname: {{a.first_name}}
+                    </div>
+                    <div id='two'>
+                        Lastname: {{a.last_name}}
+                    </div>
+                </div>
+                
+                <div id="second">
+                    <div id='onee'>
+                        Username: {{a.username}}
+                    </div>
+                    <div id='twoo'>
+                        email: {{a.email}}
+                    </div>
+                </div>
+
+                <div id="third">
+                    <div id="five">
+                        password: {{a.password1}}
+                    </div>
+                    <div id="six">
+                        confirm: {{a.password2}}
+                    </div>
+                </div>
+                <div id="fourth">
+                    <input type="submit" value="Signup" id='sign'>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+{% comment %} 
+                <div id="fourth">
+                    Bio: {{a.bio}}
+                </div>
+
+                <div id="fifth">
+                    short_intro: {{a.short_intro}}
+                </div> {% endcomment %}
+
+
+
+{% endblock %}
+
